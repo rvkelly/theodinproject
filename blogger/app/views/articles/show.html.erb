@@ -6,14 +6,16 @@
 	<% end %>
 
 </p>
-<p>
-	<% if @article.image.exists? %>
-		<%= image_tag @article.image.url %>
-	<% end %>
-</p>
-<p><%= @article.body %></p> 
 
-<h3>Comments(<%= @article.comments.count %>)</h3>
+	<p>
+		<% if @article.image.exists? %>
+			<%= image_tag @article.image.url %>
+		<% end %>
+	</p>
+	<p><%= @article.body %></p> 
+
+	<h3>Comments(<%= @article.comments.count %>)</h3>
+
 <%= render partial: 'comments/form' %>
 <%= render partial: 'articles/comment', collection: @article.comments %>
 
